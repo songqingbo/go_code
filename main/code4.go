@@ -33,3 +33,10 @@ func maxNumber(x, y int) int {
 	}
 	return y
 }
+
+func maxDepthBetter(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	return 1 + maxNumber(maxDepthBetter(root.Left), maxDepthBetter(root.Right))
+}
