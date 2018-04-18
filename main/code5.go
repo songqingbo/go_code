@@ -31,3 +31,26 @@ func invertTree(root *TreeNode) *TreeNode {
 	root.Left = invertTree(tempNode)
 	return root
 }
+
+// 帮助理解
+func invertTree2(root *TreeNode) *TreeNode {
+	if root == nil {
+		return root
+	}
+	if root.Left == nil && root.Right == nil {
+		return root
+	}
+	tempNode := root.Right
+	root.Right = invertTree(root.Left)
+	root.Left = invertTree(tempNode)
+	return root
+}
+
+// 最简洁
+func invertTree3(root *TreeNode) *TreeNode {
+	if root == nil {
+		return root
+	}
+	root.Right, root.Left = invertTree(root.Left), invertTree(root.Right)
+	return root
+}
