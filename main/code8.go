@@ -17,7 +17,7 @@ package main
  */
 
 // 遍历处理OK
-func convertBST(root *TreeNode) *TreeNode {
+func convertBST2(root *TreeNode) *TreeNode {
 	var array []int
 	getIntArray(&array, root)
 	setIntValue(array, root)
@@ -62,4 +62,27 @@ type TreeNode struct {
 	Val   int
 	Left  *TreeNode
 	Right *TreeNode
+}
+
+
+// 递归
+var sum int
+func convertBST(root *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+
+	sum = 0
+	traverse(root)
+	return root
+}
+
+func traverse(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	traverse(root.Right)
+	root.Val += sum
+	sum = root.Val
+	traverse(root.Left)
 }
