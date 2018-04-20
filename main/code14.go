@@ -10,7 +10,7 @@ package main
 输出：1->1->2->3->4->4
  */
 
- // 一波过
+// 一波过
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil {
 		return l2
@@ -28,4 +28,32 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 type ListNode struct {
 	Val  int
 	Next *ListNode
+}
+
+// 一波过
+func mergeTwoLists2(l1 *ListNode, l2 *ListNode) *ListNode {
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
+	head := &ListNode{}
+	move := head
+	for l1 != nil && l2 != nil {
+		if l1.Val <= l2.Val {
+			move.Next = l1
+			l1 = l1.Next
+		} else {
+			move.Next = l2
+			l2 = l2.Next
+		}
+		move = move.Next
+	}
+	if l1 == nil {
+		move.Next = l2
+		return head.Next
+	}
+	move.Next = l1
+	return head.Next
 }
