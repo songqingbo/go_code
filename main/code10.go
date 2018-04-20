@@ -26,11 +26,6 @@ func reverseList(head *ListNode) *ListNode {
 
 }
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 
 // simple
 func reverseListSimple(head *ListNode) *ListNode {
