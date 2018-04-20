@@ -18,11 +18,17 @@
         <entry file="file://$PROJECT_DIR$/main/code11.go">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <state relative-caret-position="433">
               <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="46" />
 =======
             <state relative-caret-position="42">
               <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+>>>>>>> Stashed changes
+=======
+            <state relative-caret-position="362">
+              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+              <folding />
 >>>>>>> Stashed changes
             </state>
           </provider>
@@ -536,6 +542,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/code10.go">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="475">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
@@ -549,6 +556,11 @@
 =======
         <state relative-caret-position="42">
           <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+>>>>>>> Stashed changes
+=======
+        <state relative-caret-position="362">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding />
 >>>>>>> Stashed changes
         </state>
       </provider>
