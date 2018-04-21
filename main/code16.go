@@ -44,3 +44,25 @@ func main() {
 	array = append(array, -2, 1, -3, 4, -1, 2, 1, -5, 4)
 	maxSubArray(array)
 }
+
+
+
+// 把上面的办法简化
+func maxSubArrayGreat(a []int) int {
+	max := -(1<<63)
+	crt := 0
+
+	for _, v := range a {
+		if crt + v < v {
+			crt = v
+		} else {
+			crt += v
+		}
+
+		if crt > max {
+			max = crt
+		}
+	}
+
+	return max
+}
