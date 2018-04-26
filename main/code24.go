@@ -11,25 +11,31 @@ package main
 func countBits(num int) []int {
 	var slice []int
 	for i := 0; i <= num; i++ {
-		if i == 0 {
-			slice = append(slice, 0)
-		} else {
-			if i%2 == 1 {
-				slice = append(slice, slice[i-1]+1)
-			} else {
-				x := i / 2
-				for x != 3 && x != 5 && x != 7 && x != 9 && x%2 == 0 {
-					x /= 2
-				}
-				if x == 1 {
-					slice = append(slice, 1)
-				} else if x == 3 || x == 5 || x == 7 || x == 9 {
-					slice = append(slice, slice[i-1]-1)
-				} else {
-					slice = append(slice, slice[i-1])
-				}
-			}
-		}
+		tempSlice := intToBinaryString(i)
+		slice = append(slice, get1N(tempSlice))
 	}
 	return slice
+}
+
+func intToBinaryString(number int) []rune {
+	var tempSlice []rune
+	for number > 0 {
+		tempSlice = append(tempSlice, rune(number%2))
+		number = number / 2
+	}
+	var slice []rune
+	for i := len(tempSlice) - 1; i > -1; i-- {
+		slice = append(slice, tempSlice[i])
+	}
+	return slice
+}
+
+func get1N(slice []rune) int {
+	n := 0
+	for _, x := range slice {
+		if x == '1' {
+			n ++
+		}
+	}
+	return n
 }
