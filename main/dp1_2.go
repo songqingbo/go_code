@@ -28,12 +28,16 @@ Output: "bb"
 输出: "bb"
  */
 
-// 82 / 94 个通过测试用例
-func longestPalindrome1(s string) string {
+
+ // 添加两个判断条件后，通过了94/94
+func longestPalindrome(s string) string {
 	length := len(s)
 	slice := make([]string, length)
 	for i := 0; i < length; i++ {
-		slice[i] = getMaxLengthString1(s[i:])
+		slice[i] = getMaxLengthString(s[i:])
+		if len(slice[i]) == length{
+			return s
+		}
 	}
 	maxLengthString := ""
 	for _, x := range slice {
@@ -44,7 +48,7 @@ func longestPalindrome1(s string) string {
 	return maxLengthString
 }
 
-func isPalindromic1(s string) bool {
+func isPalindromic(s string) bool {
 	if len(s) <= 1 {
 		return true
 	}
@@ -60,15 +64,18 @@ func isPalindromic1(s string) bool {
 	return flag
 }
 
-func getMaxLengthString1(s string) string {
+func getMaxLengthString(s string) string {
 	length := len(s)
 	maxLength := 1
 	if length <= 1 {
 		return s
 	}
 	for i := length; i > 1; i-- {
-		if isPalindromic1(s[0:i]) && maxLength < len(s[0:i]) {
+		if isPalindromic(s[0:i]) && maxLength < len(s[0:i]) {
 			maxLength = len(s[0:i])
+		}
+		if maxLength == i{
+			return s[:i]
 		}
 	}
 	return s[:maxLength]
