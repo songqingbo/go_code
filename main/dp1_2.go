@@ -30,7 +30,7 @@ Output: "bb"
 
 
  // 添加两个判断条件后，通过了94/94
-func longestPalindrome(s string) string {
+func longestPalindrome2(s string) string {
 	length := len(s)
 	slice := make([]string, length)
 	for i := 0; i < length; i++ {
