@@ -20,7 +20,7 @@ Note:
 Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
  */
 
-func minimumTotal(triangle [][]int) int {
+func minimumTotal1(triangle [][]int) int {
 	// layers of triangle
 	m := len(triangle)
 	slice := make([][]int, m)
