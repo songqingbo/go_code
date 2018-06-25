@@ -1,10 +1,13 @@
 package main
 
 import (
-	"../array"
+	"../chan"
 	"fmt"
 )
 
 func main() {
-	fmt.Println(array.ThreeSum([]int{1,2,-3}))
+	channel := make(chan int)
+	go _chan.Circular1W(channel)
+	<-channel
+	fmt.Println("main over")
 }
